@@ -61,3 +61,4 @@ export const obtenerCitaDelEstado = (state: RootState) => state.cita.data;
 export const obtenerEstadoDelPedido = (state: RootState) => state.cita.estado;
 
 export default citaSlice.reducer;
+

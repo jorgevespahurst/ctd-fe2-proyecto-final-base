@@ -19,3 +19,4 @@ export const obtenerMensaje: (
 
   return cita ? `${cita}` : NO_ENCONTRADO;
 };
+

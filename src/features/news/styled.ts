@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 
 export const ContenedorNoticias = styled.div`
@@ -54,7 +55,11 @@ export const TarjetaNoticia = styled.div`
   }
 `;
 
-export const ImagenTarjetaNoticia = styled.img`
+interface ImagenTarjetaNoticiaProps {
+  src: string;
+}
+
+export const ImagenTarjetaNoticia = styled.img<ImagenTarjetaNoticiaProps>`
   width: 100%;
   height: 40%;
   object-fit: cover;
@@ -85,7 +90,7 @@ export const FechaTarjetaNoticia = styled.p`
   text-align: right;
 `;
 
-export const BotonLectura = styled.button`
+export const BotonLectura = styled.button<React.ButtonHTMLAttributes<HTMLButtonElement>>`
   width: 100%;
   border: none;
   color: #fff;
@@ -138,7 +143,9 @@ export const TarjetaModal = styled.div`
   position: relative;
 `;
 
-export const CloseButton = styled.button`
+
+
+export const CloseButton = styled.button<React.ButtonHTMLAttributes<HTMLButtonElement>>`
   width: 20px;
   height: 20px;
   padding: 0;
@@ -157,12 +164,17 @@ export const CloseButton = styled.button`
   }
 `;
 
-export const ImagenModal = styled.img`
+interface ImagenModalProps {
+  src: string;
+  alt: string;
+}
+
+export const ImagenModal = styled.img<ImagenModalProps>`
   width: 60%;
   height: 100%;
 `;
 
-export const CotenedorTexto = styled.div`
+export const ContenedorTexto = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -193,7 +205,7 @@ export const DescripcionModal = styled.p`
   overflow-y: auto;
 `;
 
-export const BotonSuscribir = styled.button`
+export const BotonSuscribir = styled.button<React.ButtonHTMLAttributes<HTMLButtonElement>>`
   width: 20%;
   min-width: 200px;
   border: none;
@@ -207,3 +219,4 @@ export const BotonSuscribir = styled.button`
   font-weight: bold;
   font-family: "Homer Simpson Revised", sans-serif;
 `;
+

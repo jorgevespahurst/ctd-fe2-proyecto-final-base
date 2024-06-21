@@ -1,3 +1,4 @@
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { useState } from "react";
 import { shallowEqual } from "react-redux";
 import { Boton, Input, AutorCita, ContenedorCita, TextoCita } from "./styled";
@@ -9,6 +10,7 @@ import {
   obtenerCitaDeLaAPI,
 } from "./citaSlice";
 import { obtenerMensaje } from "./utils";
+import React, { ChangeEvent } from "react";
 
 function Cita() {
   const [valorInput, setValorInput] = useState("");
@@ -25,6 +27,10 @@ function Cita() {
     setValorInput("");
   };
 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValorInput(e.target.value);
+  };
+
   return (
     <ContenedorCita>
       <TextoCita>{obtenerMensaje(cita, estadoPedido)}</TextoCita>
@@ -32,7 +38,8 @@ function Cita() {
       <Input
         aria-label="Author Cita"
         value={valorInput}
-        onChange={(e) => setValorInput(e.target.value)}
+        onChange={handleChange}
+        //onChange={(e) => setValorInput(e.target.value)}
         placeholder="Ingresa el nombre del autor"
       />
       <Boton
@@ -47,4 +54,6 @@ function Cita() {
     </ContenedorCita>
   );
 }
+
 export default Cita;
+

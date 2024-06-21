@@ -65,3 +65,4 @@ export const INFO_SIMPSONS = {
     image: MargeImage,
   },
 };
+

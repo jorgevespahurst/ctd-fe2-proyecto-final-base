@@ -4,3 +4,4 @@ export interface ICita {
   imagen: string;
   direccionPersonaje: string;
 }
+

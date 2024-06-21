@@ -21,3 +21,4 @@ export const obtenerCita: (personaje?: string) => Promise<ICita> = async (
 
   return dataNormalizada;
 };
+

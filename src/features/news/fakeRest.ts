@@ -69,3 +69,4 @@ export const obtenerNoticias: () => Promise<INoticias[]> = async () => {
     }, 1000);
   });
 };
+
