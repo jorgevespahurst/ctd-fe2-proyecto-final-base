@@ -14,14 +14,16 @@ const handlers = [
             ctx.json ([{ quote: "D' oh!", character: "Homer Simpson", Image: "", characterDirection: "Right"}])
         );
     }),
-    rest.get (`$ {API_URL} ?character=character`, (req, res, ctx) => {
-        const { character } = req.params;
+    rest.get (`${API_URL}?character=:character`, (req, res, ctx) => {
+        const character = req.url.searchParams.get('character');
+        //const { character } = req.params;
         if (character === "Homer Simpson") {
             return res (
                 ctx.status (200),
                 ctx.json ([{ quote: "D' oh!", character: "Homer Simpson", Image: "", characterDirection: "Right"}])
             );
-        } else if (!isNaN (character)) {
+        } else if (character && !isNaN(Number(character))) {
+        //else if (!isNaN (character)) {
             return res (ctx.status (400), ctx.json({ message: "El nombre debe ser un texto"}));
         } else {
             return res (ctx.status (404), ctx.json ({ message: "No se encontro ninguna cita"}));

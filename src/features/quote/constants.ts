@@ -1,4 +1,5 @@
 export enum ESTADO_FETCH {
+  IDLE,
   INACTIVO,
   CARGANDO,
   ERROR,

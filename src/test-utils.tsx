@@ -4,13 +4,15 @@ import { configureStore, PreloadedState } from "@reduxjs/toolkit";
 import { Provider } from "react-redux"; 
 import { RootState } from "./app/store"; 
 import citaReducer from "./features/quote/citaSlice"; 
+import { ESTADO_FETCH } from "./features/quote/constants";
 
-enum ESTADO_FETCH {
-    IDLE = 'IDLE',
-    LOADING = 'LOADING',
-    SUCCEEDED = 'SUCCEEDED',
-    FAILED = 'FAILED'
-}
+
+//enum ESTADO_FETCH {
+//    IDLE = 'IDLE',
+//    LOADING = 'LOADING',
+//    SUCCEEDED = 'SUCCEEDED',
+//    FAILED = 'FAILED'
+//}
 
 const defaultCitaState = {
     data: null,
